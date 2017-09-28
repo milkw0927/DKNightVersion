@@ -64,7 +64,7 @@ UIColor *DKColorFromRGBA(NSUInteger hex) {
     self.themes = nil;
 
     // Load color table file
-    NSString *filepath = [[NSBundle mainBundle] pathForResource:self.file.stringByDeletingPathExtension ofType:self.file.pathExtension];
+    NSString *filepath = [[NSBundle bundleForClass:[DKColorTable class]] pathForResource:self.file.stringByDeletingPathExtension ofType:self.file.pathExtension];
     NSError *error;
     NSString *fileContents = [NSString stringWithContentsOfFile:filepath
                                                        encoding:NSUTF8StringEncoding
